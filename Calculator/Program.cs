@@ -6,7 +6,6 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-
             double firstNumber = 0, secondNumber = 0;
 
             Console.Write("Name: ");
