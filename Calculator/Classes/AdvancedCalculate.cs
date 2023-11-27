@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.Classes
 {
-    internal class AdvancedCalculate : Calculate
+    internal class AdvancedCalculate : Calculate, IAdvancedCalculate
     {
         public AdvancedCalculate(string name, string function, double firstNumber, double secondNumber)
             : base(name, function, firstNumber, secondNumber)

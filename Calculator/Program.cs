@@ -13,8 +13,8 @@ namespace Calculator
 
             Console.Write("Function [ +, -, *, /, mTable]: ");
             string function = Console.ReadLine();
-            if (function == "+" || function == "-"
-                || function == "*" || function == "/")
+
+            if (function == "+" || function == "-" || function == "*" || function == "/")
             {
                 Console.Write("firstNumber: ");
                 firstNumber = Convert.ToDouble(Console.ReadLine());
@@ -23,8 +23,8 @@ namespace Calculator
                 secondNumber = Convert.ToDouble(Console.ReadLine());
             }
 
-            AdvancedCalculate advancedCalculate = new AdvancedCalculate(name, function,
-                firstNumber, secondNumber);
+            ICalculate advancedCalculate = 
+                new AdvancedCalculate(name, function, firstNumber, secondNumber);
             advancedCalculate.Do();
 
         }

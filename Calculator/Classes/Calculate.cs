@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.Classes
 {
-    internal class Calculate
+    internal class Calculate : ICalculate
     {
         protected bool Item = false;
         public string Name { get; set; }
