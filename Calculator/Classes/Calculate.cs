@@ -8,62 +8,66 @@ namespace Calculator.Classes
 {
     internal class Calculate
     {
-        string name;
-        char item;
-        double firstNumber, secondNumber;
+        protected bool Item = false;
+        public string Name { get; set; }
+        public string Function { get; set; }
+        public double FirstNumber { get; set; }
+        public double SecondNumber { get; set; }
 
-        public Calculate(string name, char item, double firstNumber, double secondNumber)
+        public Calculate(string name, string function, double firstNumber, double secondNumber)
         {
-            this.name = name;
-            this.item = item;
-            this.firstNumber = firstNumber;
-            this.secondNumber = secondNumber;
+            Name = name;
+            Function = function;
+            FirstNumber = firstNumber;
+            SecondNumber = secondNumber;
         }
 
-        public void Do()
+        public virtual void Do()
         {
-            switch (item)
+            switch (Function)
             {
-                case '+':
+                case "+":
                     Addition();
+                    Item = true;
                     break;
-                case '-':
+                case "-":
                     Subtraction();
+                    Item = true;
                     break;
-                case '*':
+                case "*":
                     Multiplication();
+                    Item = true;
                     break;
-                case '/':
+                case "/":
                     Division();
+                    Item = true;
                     break;
-                default:
-                    Console.WriteLine("Inserted action was error");
-                    break;
+                
             }
         }
 
         public void Addition()
         {
-            double result = firstNumber + secondNumber;
-            Console.WriteLine($"\nName: {name} \n{firstNumber} + {secondNumber} = {result}");
+            double result = FirstNumber + SecondNumber;
+            Console.WriteLine($"\nName: {Name} \n{FirstNumber} + {SecondNumber} = {result}");
         }
 
         public void Subtraction()
         {
-            double result = firstNumber - secondNumber;
-            Console.WriteLine($"\nName: {name} \n{firstNumber} - {secondNumber} = {result}");
+            double result = FirstNumber - SecondNumber;
+            Console.WriteLine($"\nName: {Name} \n{FirstNumber} - {SecondNumber} = {result}");
         }
 
         public void Multiplication()
         {
-            double result = firstNumber * secondNumber;
-            Console.WriteLine($"\nName: {name} \n{firstNumber} * {secondNumber} = {result}");
+            double result = FirstNumber * SecondNumber;
+            Console.WriteLine($"\nName: {Name} \n{FirstNumber} * {SecondNumber} = {result}");
         }
 
         public void Division()
         {
-            double result = firstNumber / secondNumber;
-            Console.WriteLine($"\nName: {name} \n{firstNumber} / {secondNumber} = {result}");
+            double result = FirstNumber / SecondNumber;
+            Console.WriteLine($"\nName: {Name} \n{FirstNumber} / {SecondNumber} = {result}");
         }
     }
 }
