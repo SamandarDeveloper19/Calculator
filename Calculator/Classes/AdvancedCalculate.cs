@@ -9,10 +9,6 @@ namespace Calculator.Classes
 {
     internal class AdvancedCalculate : Calculate, IAdvancedCalculate
     {
-        public AdvancedCalculate(string name, string function, double firstNumber, double secondNumber)
-            : base(name, function, firstNumber, secondNumber)
-        { }
-
         public override void Do()
         {
             base.Do();
@@ -20,6 +16,8 @@ namespace Calculator.Classes
             {
                 case "mTable":
                     MultiplicationTable();
+                    string operation = $"Name : {Name}, Used Multiplication Table! ";
+                    Histories.Add(operation);
                     Item = true;
                     break;
             }
